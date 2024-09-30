@@ -1,0 +1,66 @@
+/* Reset de márgenes y padding */
+body, h1, h2, h3, p, table {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del contenedor principal */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Estilo del título principal */
+h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333; /* Cambia esto según el color deseado */
+}
+
+/* Estilo del subtítulo */
+h6 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #555; /* Cambia esto según el color deseado */
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+/* Estilo de las celdas de la tabla */
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+}
+
+/* Estilo de la fila de encabezado de la tabla */
+thead tr {
+    background-color: #f8f8f8; /* Cambia esto según el color deseado */
+}
+
+/* Estilo de las filas impares de la tabla */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Cambia esto según el color deseado */
+}
+
+/* Estilo de las celdas de la tabla con texto centrado */
+th, td {
+    text-align: center;
+}
+
+/* Estilo de las celdas con texto más pequeño */
+th, td {
+    font-size: 0.8rem;
+    color: #666; /* Cambia esto según el color deseado */
+}
+
+/* Estilo de la fuente */
+body {
+    font-family: Arial, sans-serif;
+}
