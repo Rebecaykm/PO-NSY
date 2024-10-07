@@ -27,10 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->unsignedBigInteger('Department_id')->nullable();
-            $table->unsignedBigInteger('Buyer_id')->nullable();
             
             $table->foreign('Department_id')->references('id')->on('departments')->onDelete('set null');
-            $table->foreign('Buyer_id')->references('id')->on('buyers')->onDelete('set null');
             $table->timestamps();
         });
     }
