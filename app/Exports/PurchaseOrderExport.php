@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -12,21 +13,17 @@ class PurchaseOrderExport implements FromView
     /**
     * @return \Illuminate\Support\Collection
     */
+    private $PO;
 
-    private $RQLines;
-    private $selectedRQ;
-
-    public function __construct($selectedRQ,$RQLines)
+    public function __construct($PO)
     {
-        $this->RQLines = $RQLines;
-        $this->selectedRQ = $selectedRQ;
+        $this->PO = $PO;
     }
 
     public function view(): View
     {
-
-        return view('Purchasing.requestQuote.pdf', [
-            'selectedRQ' => $this->selectedRQ,
+        return view('pdf', [
+            'PO' => $this->PO,
         ]);
     }
 

@@ -15,15 +15,19 @@ class HPO extends Model
     public $timestamps = false; // Desactivar timestamps
     public $incrementing = false;
     protected $fillable = [
-        //ej. 470694
-        'PID', //Estatus
-        'PORD', //num po
-        'PLINE', //numero de linea
-        'PPROD', //commodity
+        //ej.     470694
+        'PID',    //Estatus
+        'PORD',   //num po
+        'PLINE',  //numero de linea
+        'PPROD',  //commodity
         'PODESC', //descripcion
-        'PUM', //unidad de medida
-        'PDDTE', //Due Date
-        'PQORD', //Quantity Ordered
-        'PECST', //verificar si este es el costo individual
+        'PUM',    //unidad de medida
+        'PDDTE',  //Due Date
+        'PQORD',  //Quantity Ordered
+        'PECST',  //Unit Cost
+        'PVEND',  // VENDOR NUM
+        'PSHIP',  // Ship To
+        'PONAME', //  Departament ship to
+        'PBUYC',  //Buyer
     ];
 }
