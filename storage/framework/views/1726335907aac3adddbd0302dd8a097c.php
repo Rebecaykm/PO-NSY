@@ -40,12 +40,10 @@
         // Función para actualizar la tabla con un solo objeto
         function updateTable(po) {
             $('#purchaseOrderTable').empty(); // Limpia la tabla antes de agregar nueva fila
-
             if (!po) { // Si no hay resultados
                 $('#purchaseOrderTable').append('<tr><td colspan="6" class="text-center">No se encontraron resultados</td></tr>');
                 return;
             }
-
             const row = `
                 <tr class="text-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">
                     <td class="px-4 py-2 text-xs">${po.PORD || ''}</td>
@@ -55,9 +53,7 @@
                     <td class="px-4 py-2 text-xs">${po.PBUYC || ''}</td>
                     <td class="px-4 py-2 text-xs">${po.POCUR || ''}</td>
                     <td class="px-4 py-2 text-xs description-cell">
-                        <a href="<?php echo e(route('pdf', ['PO' => '${po.PORD}'])); ?>" target="_blank">
-                            PDF
-                        </a>
+                        <a href="/pdf/${po.PORD}" target="_blank">PDF</a>
                     </td>
                 </tr>`;
 

@@ -2086,7 +2086,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
     <o:idmap v:ext="edit" data="1"/>
     </o:shapelayout></xml><![endif]-->
     </head>
-    @php
+    <?php
         // dd($PORD);
         // $selectedRQ->id
         // $RequestRequisitions = App\Models\HPO::where('PORD',$PORD)->first();
@@ -2098,8 +2098,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
         $Numero_de_lienas = $lines->count();
         $maximo_de_lineas = 11;
         $numero_de_hojas = ceil($Numero_de_lienas / $maximo_de_lineas);
-        @endphp
-        @for($hoja = 0; $hoja < $numero_de_hojas; $hoja++)
+        ?>
+        <?php for($hoja = 0; $hoja < $numero_de_hojas; $hoja++): ?>
             <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
                 <div class=WordSection1>
                     <table class=Tablaconcuadrcula border=1 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt; mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
@@ -2144,18 +2144,20 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </p>
                             </td>
                             <td width="25%" rowspan=6 style='width:25.16%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
-                            @php
+                            <?php
                                 $PROVEEDOR = App\Models\AVM::where('VENDOR',$PO->PVEND)->first();
-                            @endphp
+                            ?>
                             <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                 <span lang=EN-US style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:EN-US'>
-                                    {{$PO->PVEND}}
+                                    <?php echo e($PO->PVEND); ?>
+
                                 </span>
                             </p>
                             
                             <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                 <span lang=EN-US style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:EN-US'>
-                                    {{$PROVEEDOR->VNDNAM}}
+                                    <?php echo e($PROVEEDOR->VNDNAM); ?>
+
                                 </span>
                             </p>
                             <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
@@ -2177,7 +2179,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                    {{$PO->PORD}}
+                                    <?php echo e($PO->PORD); ?>
+
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
@@ -2197,7 +2200,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{$PO->PORD}}
+                                        <?php echo e($PO->PORD); ?>
+
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
@@ -2217,7 +2221,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{$PO->POCUR}}
+                                        <?php echo e($PO->POCUR); ?>
+
                                     </span><span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
@@ -2236,7 +2241,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{Carbon\Carbon::today()->format('d/m/Y');}}
+                                        <?php echo e(Carbon\Carbon::today()->format('d/m/Y')); ?>
+
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
@@ -2368,61 +2374,69 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             </td>
                         </tr>
                 
-                        @for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lienas); $i++)
+                        <?php for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lienas); $i++): ?>
                             <tr style='mso-yfti-irow:1;height:7.1pt'>
                                 <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{ $lines[$i]->PLINE}}
+                                            <?php echo e($lines[$i]->PLINE); ?>
+
                                         </span>
                                     </p>
                                 </td>
                                 <td width="13%" valign=top style='width:13.34%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{$lines[$i]->PPROD}}
+                                            <?php echo e($lines[$i]->PPROD); ?>
+
                                         </span>
                                     </p>
                                 </td>
                                 <td width="28%" valign=top style='width:28.58%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{$lines[$i]->PODESC}}
+                                            <?php echo e($lines[$i]->PODESC); ?>
+
                                         </span>
                                     </p>
                                 </td>
                                 <td width="3%" valign=top style='width:3.94%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{$lines[$i]->PUM}}
+                                            <?php echo e($lines[$i]->PUM); ?>
+
                                         </span>
                                     </p>
                                 </td>
                                 <td width="6%" valign=top style='width:6.9%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{$lines[$i]->PDDTE}}
+                                            <?php echo e($lines[$i]->PDDTE); ?>
+
                                         </span>
                                     </p>
                                 </td>
                                 <td width="7%" valign=top style='width:7.88%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{$lines[$i]->PQORD}}
+                                            <?php echo e($lines[$i]->PQORD); ?>
+
                                         </span></span>
                                     </p>
                                 </td>
                                 <td width="10%" valign=top style='width:10.68%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{number_format($lines[$i]->PECST,2)}}
+                                            <?php echo e(number_format($lines[$i]->PECST,2)); ?>
+
                                         </span>
                                     </p>
                                 </td>
                                 <td width="10%" valign=top style='width:10.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            {{number_format($lines[$i]->PQORD * $lines[$i]->PECST,2)}}
+                                            <?php echo e(number_format($lines[$i]->PQORD * $lines[$i]->PECST,2)); ?>
+
                                         </span>
                                     </p>
                                 </td>
@@ -2432,9 +2446,9 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                     </p>
                                 </td>
                             </tr>
-                        @endfor
-                        @if($hoja == $numero_de_hojas - 1)
-                            @for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lienas % $maximo_de_lineas)) % $maximo_de_lineas; $i++)
+                        <?php endfor; ?>
+                        <?php if($hoja == $numero_de_hojas - 1): ?>
+                            <?php for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lienas % $maximo_de_lineas)) % $maximo_de_lineas; $i++): ?>
                                 <tr style='mso-yfti-irow:1;height:7.1pt'>
                                     <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
@@ -2482,8 +2496,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                         </p>
                                     </td>
                                 </tr>
-                            @endfor
-                        @endif
+                            <?php endfor; ?>
+                        <?php endif; ?>
                         <tr style='mso-yfti-irow:6'>
                             <td width="64%" colspan=6 rowspan=5 valign=top style='width:64.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
@@ -2498,7 +2512,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                        {{ number_format($SUBTOTAL, 2) }}
+                                        <?php echo e(number_format($SUBTOTAL, 2)); ?>
+
                                     </span>
                                     <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2522,7 +2537,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                        {{ number_format($IVA, 2) }}
+                                        <?php echo e(number_format($IVA, 2)); ?>
+
                                     </span>
                                     <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2540,7 +2556,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                        {{ number_format($IRF, 2) }}
+                                        <?php echo e(number_format($IRF, 2)); ?>
+
                                     </span>
                                     <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2558,7 +2575,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                        {{ number_format($OT, 2) }}
+                                        <?php echo e(number_format($OT, 2)); ?>
+
                                     </span>
                                     <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2576,7 +2594,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                        {{ number_format($SUBTOTAL+$IVA+$IRF+$OT, 2) }}
+                                        <?php echo e(number_format($SUBTOTAL+$IVA+$IRF+$OT, 2)); ?>
+
                                     </span><span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
@@ -2624,7 +2643,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                         <span class=SpellE>
                                             Conditions
                                         </span>
-                                        : {{$PO->PTMKY}}
+                                        : <?php echo e($PO->PTMKY); ?>
+
                                         <span class=SpellE>
                                             Dias
                                         </span>
@@ -2725,33 +2745,21 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                     </span>
                                 </p>
                             </td>
-                            {{-- Imagen Fimra Comprador --}}
-                            {{-- @php
-                                $firma = App\Models\User::where('id',$selectedRQ->gerente->id)->pluck('signature')->first();
-                            @endphp --}}
+                            
+                            
                             <td width="17%" rowspan=3 valign=top style='width:17.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- @if ($firma)
-                                            <img height="30" width="120" class="object-cover w-full h-full rounded-full"
-                                                                    src="{{ asset('storage/signs/' . $firma) }}" 
-                                                                    alt="Firma Comprador"
-                                                                    />
-                                        @endif --}}
+                                        
                                     </span>
                                 </p>
                             </td>
-                            {{-- Imagen Firma Gerente Compras --}}
-                            {{-- @php
-                                $firma = App\Models\User::where('id',$selectedRQ->director->id)->pluck('signature')->first();
-                            @endphp --}}
+                            
+                            
                             <td width="20%" rowspan=3 valign=top style='width:20.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- <img height="30" width="120" class="object-cover w-full h-full rounded-full"
-                                                                    src="{{ asset('storage/signs/' . $firma) }}" 
-                                                                    alt="Firma Gerente Compras"
-                                                                    /> --}}
+                                        
                                     </span>
                                 </p>
                             </td>
@@ -2800,7 +2808,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
-                                        {{-- {{$selectedRQ->ApprovateBuyerName}} --}}
+                                        
                                     </span>
                                     <span style='font-size:7.0pt;font-family: "Arial",sans-serif'>
                                     </span>
@@ -2809,7 +2817,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- {{$selectedRQ->ApprovateDirector}} --}}
+                                        
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2890,33 +2898,21 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                     </span>
                                 </p>
                             </td>
-                            {{-- Imagen Firma Vicepresidente --}}
-                            {{-- @php
-                                $firma = App\Models\User::where('id',$selectedRQ->vicepresidente->id)->pluck('signature')->first();
-                            @endphp --}}
+                            
+                            
                             <td width="17%" rowspan=3 valign=top style='width:17.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- <img height="30" width="120" class="object-cover w-full h-full rounded-full"
-                                                                    src="{{ asset('storage/signs/' . $firma) }}" 
-                                                                    alt="Firma Vicepresidente"
-                                                                    /> --}}
+                                        
                                     </span>
                                 </p>
                             </td>
-                            {{-- Imagen Firma Presidente --}}
-                            {{-- @php
-                                $firma = App\Models\User::where('id',$selectedRQ->presidente->id)->pluck('signature')->first();
-                                $firmaPath = 'signs/' . $firma;
-                                // dd($firma);
-                            @endphp --}}
+                            
+                            
                             <td width="20%" rowspan=3 valign=top style='width:20.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- <img height="35" width="120" class="object-cover w-full h-full rounded-full"
-                                                                    src="{{ asset('storage/signs/' . $firma) }}" 
-                                                                    alt="Firma Presidente"
-                                                                    /> --}}
+                                        
                                     </span>
                                 </p>
                             </td>
@@ -2956,7 +2952,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="16%" valign=top style='width:16.74%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
-                                        {{$PO->PSHIP}}
+                                        <?php echo e($PO->PSHIP); ?>
+
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2990,7 +2987,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="16%" valign=top style='width:16.74%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- {{$selectedRQ->UserName}} --}}
+                                        
                                     </span><span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
@@ -2998,7 +2995,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- {{$selectedRQ->ApprovateVPresidentName}} --}}
+                                        
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -3007,7 +3004,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        {{-- {{$selectedRQ->ApprovatePresidentName}} --}}
+                                        
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -3017,5 +3014,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     </table>
                 </div>
             </body>
-        @endfor
+        <?php endfor; ?>
 </html>
+<?php /**PATH C:\xampp\htdocs\PO-MSY\resources\views/pdf.blade.php ENDPATH**/ ?>

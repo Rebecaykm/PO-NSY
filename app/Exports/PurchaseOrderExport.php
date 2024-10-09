@@ -2,7 +2,6 @@
 
 namespace App\Exports;
 
-use Barryvdh\DomPDF\PDF;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromView;

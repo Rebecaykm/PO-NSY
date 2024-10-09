@@ -29,5 +29,6 @@ class HPO extends Model
         'PSHIP',  // Ship To
         'PONAME', //  Departament ship to
         'PBUYC',  //Buyer
+        'POCUR',  //Currency
     ];
 }

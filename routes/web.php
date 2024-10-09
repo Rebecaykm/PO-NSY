@@ -18,8 +18,8 @@ use App\Http\Controllers\LanguageController;
 
     Route::get('lang/{locale}', [LanguageController::class, 'switchLang'])->name('lang.switch');
     
-    Route::get('/', action: [HomeController::class, 'index'])->name('index');
-    Route::get('/pdf', [HomeController::class, 'pdf'])->name('pdf');
+    Route::get('/',[HomeController::class, 'index'])->name('index');
+    Route::get('/pdf/{PORD}', [HomeController::class, 'pdf'])->name('pdf');
     Route::get('/{purchasingOrder}', [HomeController::class, 'show'])->name('show');
     // Route::get('/Configuration/users/pdf', [UserController::class, 'pdf'])->name('Configuration.User.pdf');
 });
