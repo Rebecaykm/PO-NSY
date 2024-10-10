@@ -2200,7 +2200,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        <?php echo e($PO->PORD); ?>
+                                        
+                                        <?php echo e($lines[0]->POSRCE); ?>
 
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
@@ -2411,7 +2412,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <td width="6%" valign=top style='width:6.9%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                         <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e($lines[$i]->PDDTE); ?>
+                                            <?php echo e(\Carbon\Carbon::createFromFormat('Ymd', $lines[$i]->PDDTE)->format('d/m/Y')); ?>
 
                                         </span>
                                     </p>
@@ -2713,7 +2714,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            Buyers Signature and 
+                                            Buyer's Signature and 
                                             <span class=SpellE>
                                                 Stamp
                                             </span>
@@ -2724,7 +2725,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            Admin. Purchasing manager Signature 
+                                            Operations Manager
                                         </span>
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
@@ -2808,7 +2809,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
-                                        
+                                        <?php echo e($PO->PBUYC); ?>
+
                                     </span>
                                     <span style='font-size:7.0pt;font-family: "Arial",sans-serif'>
                                     </span>
@@ -2817,7 +2819,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        
+                                        Javier Luna
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -2861,12 +2863,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            Vicepresident 
-                                        </span>
-                                    </span>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        <span class=SpellE>
-                                            Signature
+                                            Operations Director
                                         </span>
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
@@ -2877,7 +2874,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            President Signature
+                                            Vicepresident Adm. Signature
                                         </span>
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
@@ -2995,7 +2992,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        
+                                        Kazuyoshi Emura
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
@@ -3004,7 +3001,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        
+                                        Alejandro Perez
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
