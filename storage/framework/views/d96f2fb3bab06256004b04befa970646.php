@@ -2604,6 +2604,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="14%" valign=top style='width:14.72%;border:none;mso-border-left-alt:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <?php echo e($PO->POCUR); ?>
+
                                     </span>
                                 </p>
                             </td>
@@ -2620,16 +2622,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            Delivey
+                                            Delivey Condirions (Incoterms):
                                         </span>
-                                    </span>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        <span class=SpellE>
-                                            Condirions
-                                        </span>
-                                        (Incoterms):
-                                    </span>
-                                    <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2637,17 +2631,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            Payment
-                                        </span>
-                                    </span>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'> 
-                                        <span class=SpellE>
-                                            Conditions
-                                        </span>
-                                        : <?php echo e($PO->PTMKY); ?>
-
-                                        <span class=SpellE>
-                                            Dias
+                                            Payment Conditions : <?php echo e($PO->PTMKY); ?> Dias
                                         </span>
                                     </span>
                                     <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
@@ -2694,19 +2678,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
                                         <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                                            Conditions 
+                                            Conditions / Remarks / Documents :
                                         </span>
-                                    </span>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                        / 
-                                    <span class=SpellE>
-                                        Remarks 
-                                    </span>
-                                        / 
-                                    <span class=SpellE>
-                                        Documents
-                                    </span>
-                                        :
                                     </span>
                                 </p>
                             </td>
