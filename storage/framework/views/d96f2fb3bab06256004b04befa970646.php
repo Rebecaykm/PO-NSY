@@ -2096,7 +2096,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 ->orderBy('PLINE','ASC')
                                 ->get();
         $Numero_de_lienas = $lines->count();
-        $maximo_de_lineas = 11;
+        $maximo_de_lineas = 12;
         $numero_de_hojas = ceil($Numero_de_lienas / $maximo_de_lineas);
         ?>
         <?php for($hoja = 0; $hoja < $numero_de_hojas; $hoja++): ?>
@@ -2106,41 +2106,41 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:7.1pt'>
                             <td width="23%" rowspan=6 style='width:23.64%;border:none;border-right:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         PURCHASE ORDER
                                     </span>
                                 </p>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         ORDEN DE COMPRA<o:p></o:p>
                                     </span>
                                 </p>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ligatures:none;mso-no-proof:yes'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ligatures:none;mso-no-proof:yes'>
                                         <img width=156 height=81
                                             id="_x0000_i1025"
                                             src="https://ii.ct-stc.com/2/logos/empresas/2017/04/25/y-tec-keylex-mexico-sa-de-cv-9460030D8482506E170225thumbnail.jpeg"
                                             alt="Y-TEC KEYLEX MEXICO México">
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                             <td width="25%" valign=top style='width:25.6%;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             Kind of Order
                                         </span>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                     </span>
                                 </p>
                             </td>
                             <td width="25%" valign=top style='width:25.6%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         CLOSE PURCHASE ORDER
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                             <td width="25%" rowspan=6 style='width:25.16%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
@@ -2148,20 +2148,20 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 $PROVEEDOR = App\Models\AVM::where('VENDOR',$PO->PVEND)->first();
                             ?>
                             <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                <span lang=EN-US style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:EN-US'>
+                                <span lang=EN-US style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:EN-US'>
                                     <?php echo e($PO->PVEND); ?>
 
                                 </span>
                             </p>
                             
                             <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                <span lang=EN-US style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:EN-US'>
+                                <span lang=EN-US style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:EN-US'>
                                     <?php echo e($PROVEEDOR->VNDNAM); ?>
 
                                 </span>
                             </p>
                             <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
-                            line-height:normal'><span lang=EN-US style='font-size:7.0pt;font-family:"Arial",sans-serif;
+                            line-height:normal'><span lang=EN-US style='font-size:6.0pt;font-family:"Arial",sans-serif;
                             mso-ansi-language:EN-US'></span></p>
                             </td>
                         </tr>
@@ -2169,20 +2169,20 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             Purchase Order # 
                                         </span>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                     </span>
                                 </p>
                             </td>
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     <?php echo e($PO->PORD); ?>
 
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                         </tr>
@@ -2190,21 +2190,21 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             REQ #
                                         </span>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                     </span>
                                 </p>
                             </td>
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
                                         <?php echo e($lines[0]->POSRCE); ?>
 
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                         </tr>
@@ -2212,19 +2212,19 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             Currency
                                         </span>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                     </span>
                                 </p>
                             </td>
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         <?php echo e($PO->POCUR); ?>
 
-                                    </span><span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    </span><span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                         </tr>
@@ -2232,20 +2232,20 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="25%" valign=top style='width:25.6%;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             Date
                                         </span>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                     </span>
                                 </p>
                             </td>
                             <td width="25%" valign=top style='width:25.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         <?php echo e(Carbon\Carbon::today()->format('d/m/Y')); ?>
 
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                         </tr>
@@ -2253,40 +2253,40 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="51%" colspan=2 valign=top style='width:51.2%;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:90%'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;line-height:90%;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;line-height:90%;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             Invoice information
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:90%;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;line-height:90%;font-family:"Arial",sans-serif'></span>
                                 </p>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:90%'>
-                                    <span lang=ES style='font-size:7.0pt;line-height:90%;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;line-height:90%;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         Y-Tec Keylex Mexico, S.A. de C.V GTK111107f89
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:90%;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;line-height:90%;font-family:"Arial",sans-serif'></span>
                                 </p>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:90%'>
-                                    <span lang=ES style='font-size:7.0pt;line-height:90%;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;line-height:90%;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         Av. HIROSHIMA No. 1000, INT.5 COMPLEJO INDUSTRIAL
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:90%;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;line-height:90%;font-family:"Arial",sans-serif'></span>
                                 </p>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         SALAMANCA, Salamanca Guanajuato, Mexico C.P.36875
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                         </tr>
                     </table>
                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                         </span>
                     </p>
 
                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                         </span>
                     </p>
                     <br>
@@ -2294,14 +2294,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:2.85pt'>
                             <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:115%'>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                         NO.
                                     </span>
                                 </p>
                             </td>
                             <td width="13%" valign=top style='width:13.34%;border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:115%'>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                         ITEM #
                                     </span>
                                 </p>
@@ -2309,33 +2309,33 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="28%" valign=top style='width:28.58%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:115%'>
                                     <span class=SpellE>
-                                        <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                             Name
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="3%" valign=top style='width:3.94%;border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:115%;tab-stops:52.1pt'>
                                     <span class=SpellE>
-                                        <span style='font-size: 7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                             Units
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>    
                             </td>
                             <td width="6%" valign=top style='width:6.9%;border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:115%'>
                                     <span class=SpellE>
-                                        <span style='font-size:7.0pt;line-height: 115%;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;line-height: 115%;font-family:"Arial",sans-serif'>
                                             Due
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                         Date
                                     </span>
                                 </p>
@@ -2343,24 +2343,24 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="7%" valign=top style='width:7.88%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:115%'>
                                     <span class=SpellE>
-                                        <span style='font-size:7.0pt;line-height: 115%;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;line-height: 115%;font-family:"Arial",sans-serif'>
                                             Quantity
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.68%;border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:115%'>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family: "Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family: "Arial",sans-serif'>
                                         Price
                                     </span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:115%'>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>
                                         Total
                                     </span>
                                 </p>
@@ -2368,18 +2368,17 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="14%" valign=top style='width:14.72%;border:solid windowtext 1.0pt;border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:2.85pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:115%'>
                                     <span class=SpellE>
-                                        <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'>Remarks</span>
+                                        <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'>Remarks</span>
                                     </span>
-                                    <span style='font-size:7.0pt;line-height:115%;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;line-height:115%;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                         </tr>
-                
                         <?php for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lienas); $i++): ?>
                             <tr style='mso-yfti-irow:1;height:7.1pt'>
                                 <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e($lines[$i]->PLINE); ?>
 
                                         </span>
@@ -2387,7 +2386,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="13%" valign=top style='width:13.34%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e($lines[$i]->PPROD); ?>
 
                                         </span>
@@ -2395,7 +2394,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="28%" valign=top style='width:28.58%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e($lines[$i]->PODESC); ?>
 
                                         </span>
@@ -2403,7 +2402,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="3%" valign=top style='width:3.94%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e($lines[$i]->PUM); ?>
 
                                         </span>
@@ -2411,7 +2410,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="6%" valign=top style='width:6.9%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e(\Carbon\Carbon::createFromFormat('Ymd', $lines[$i]->PDDTE)->format('d/m/Y')); ?>
 
                                         </span>
@@ -2419,7 +2418,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="7%" valign=top style='width:7.88%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e($lines[$i]->PQORD); ?>
 
                                         </span></span>
@@ -2427,7 +2426,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="10%" valign=top style='width:10.68%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e(number_format($lines[$i]->PECST,2)); ?>
 
                                         </span>
@@ -2435,7 +2434,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="10%" valign=top style='width:10.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                             <?php echo e(number_format($lines[$i]->PQORD * $lines[$i]->PECST,2)); ?>
 
                                         </span>
@@ -2443,7 +2442,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </td>
                                 <td width="14%" valign=top style='width:14.72%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                     </p>
                                 </td>
                             </tr>
@@ -2453,47 +2452,47 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <tr style='mso-yfti-irow:1;height:7.1pt'>
                                     <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="13%" valign=top style='width:13.34%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="28%" valign=top style='width:28.58%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="3%" valign=top style='width:3.94%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="6%" valign=top style='width:6.9%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'> </span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'> </span>
                                         </p>
                                     </td>
                                     <td width="7%" valign=top style='width:7.88%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="10%" valign=top style='width:10.68%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="10%" valign=top style='width:10.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>&nbsp;</span>
                                         </p>
                                     </td>
                                     <td width="14%" valign=top style='width:14.72%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                            <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                            <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                         </p>
                                     </td>
                                 </tr>
@@ -2502,27 +2501,27 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:6'>
                             <td width="64%" colspan=6 rowspan=5 valign=top style='width:64.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>SUB TOTAL</span>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>SUB TOTAL</span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                         <?php echo e(number_format($SUBTOTAL, 2)); ?>
 
                                     </span>
-                                    <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="14%" rowspan=4 valign=top style='width:14.72%;border:none; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2530,18 +2529,18 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:7'>
                             <td width="10%" valign=top style='width:10.68%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                         IVA
                                     </span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                         <?php echo e(number_format($IVA, 2)); ?>
 
                                     </span>
-                                    <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2549,18 +2548,18 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:8'>
                             <td width="10%" valign=top style='width:10.68%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                         IRF
                                     </span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                         <?php echo e(number_format($IRF, 2)); ?>
 
                                     </span>
-                                    <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2568,18 +2567,18 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:9'>
                             <td width="10%" valign=top style='width:10.68%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                         OTHER TAX
                                     </span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                         <?php echo e(number_format($OT, 2)); ?>
 
                                     </span>
-                                    <span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2587,23 +2586,23 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes'>
                             <td width="10%" valign=top style='width:10.68%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center; line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                         TOTAL
                                     </span>
                                 </p>
                             </td>
                             <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                         <?php echo e(number_format($SUBTOTAL+$IVA+$IRF+$OT, 2)); ?>
 
-                                    </span><span style='font-size: 7.0pt;font-family:"Arial",sans-serif'>
+                                    </span><span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="14%" valign=top style='width:14.72%;border:none;mso-border-left-alt:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                         <?php echo e($PO->POCUR); ?>
 
                                     </span>
@@ -2612,7 +2611,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         </tr>
                     </table>
                     <p class=MsoNormal>
-                        <span style='font-size:7.0pt;line-height:105%;font-family:"Arial",sans-serif'>
+                        <span style='font-size:6.0pt;line-height:105%;font-family:"Arial",sans-serif'>
                         </span>
                     </p>
 
@@ -2621,7 +2620,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="63%" colspan=3 valign=top style='width:63.0%;border:solid windowtext 1.0pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Delivey Condirions (Incoterms):
                                         </span>
                                     </span>
@@ -2630,11 +2629,11 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="37%" colspan=2 valign=top style='width:37.0%;border:solid windowtext 1.0pt; border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt: solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Payment Conditions : <?php echo e($PO->PTMKY); ?> Dias
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2642,33 +2641,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:1;height:7.1pt'>
                             <td width="63%" colspan=3 valign=top style='width:63.0%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="37%" colspan=2 valign=top style='width:37.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
-                                    </span>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr style='mso-yfti-irow:2;height:7.1pt'>
-                            <td width="63%" colspan=3 valign=top style='width:63.0%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
-                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
-                                    </span>
-                                </p>
-                            </td>
-                            <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
-                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
-                                        </span>
-                                </p>
-                            </td>
-                            <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
-                                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2677,7 +2656,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="63%" colspan=3 valign=top style='width:63.0%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Conditions / Remarks / Documents :
                                         </span>
                                     </span>
@@ -2686,22 +2665,22 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Buyer's Signature and 
                                             <span class=SpellE>
                                                 Stamp
                                             </span>
                                         </span>
-                                        <span style='font-size:7.0pt;font-family:"Arial",sans-serif'></span></p>
+                                        <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span></p>
                             </td>
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Operations Manager
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2709,13 +2688,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:4;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2723,7 +2702,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             
                             <td width="17%" rowspan=3 valign=top style='width:17.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
                                     </span>
                                 </p>
@@ -2732,7 +2711,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             
                             <td width="20%" rowspan=3 valign=top style='width:20.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
                                     </span>
                                 </p>
@@ -2741,13 +2720,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:5;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2755,13 +2734,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:6;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2769,32 +2748,32 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:7;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
                                         <?php echo e($PO->PBUYC); ?>
 
                                     </span>
-                                    <span style='font-size:7.0pt;font-family: "Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family: "Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         Javier Luna
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2802,19 +2781,19 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <tr style='mso-yfti-irow:8;height:7.1pt'>
                                 <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             </span>
                                         </p>
                                 </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="37%" colspan=2 valign=top style='width:37.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2822,35 +2801,35 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:9;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Operations Director
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Vicepresident Adm. Signature
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2858,13 +2837,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:10;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2872,7 +2851,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             
                             <td width="17%" rowspan=3 valign=top style='width:17.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
                                     </span>
                                 </p>
@@ -2881,7 +2860,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             
                             <td width="20%" rowspan=3 valign=top style='width:20.0%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
                                     </span>
                                 </p>
@@ -2890,13 +2869,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:11;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="34%" colspan=2 valign=top style='width:34.48%;border-top:none; border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
@@ -2904,28 +2883,28 @@ xmlns="http://www.w3.org/TR/REC-html40">
                         <tr style='mso-yfti-irow:12;height:7.1pt'>
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                     </span>
                                 </p>
                             </td>
                             <td width="17%" valign=top style='width:17.74%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
                                             Department
                                         </span>
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="16%" valign=top style='width:16.74%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language: ES'>
                                         <?php echo e($PO->PSHIP); ?>
 
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
@@ -2934,49 +2913,49 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             <td width="28%" valign=top style='width:28.54%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                     <span class=SpellE>
-                                        <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                        <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                             Vendor 
                                         </span>
                                     </span>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         notes
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="17%" valign=top style='width:17.74%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         Persona asignada para recibir
                                     </span>
-                                    <span style='font-size:7.0pt; font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt; font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="16%" valign=top style='width:16.74%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
-                                    </span><span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    </span><span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="17%" valign=top style='width:17.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         Kazuyoshi Emura
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
                             <td width="20%" valign=top style='width:20.0%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt; mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                                    <span lang=ES style='font-size:7.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
+                                    <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         Alejandro Perez
                                     </span>
-                                    <span style='font-size:7.0pt;font-family:"Arial",sans-serif'>
+                                    <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                                     </span>
                                 </p>
                             </td>
