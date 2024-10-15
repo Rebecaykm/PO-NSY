@@ -14,20 +14,30 @@ class HomeController extends Controller
     //
     public function index(Request $request)
     {
-        $POs = [];
         if ($request->has('search') && !empty($request->search)) {
-            $POs = HPO::where('PORD', 'like', '%' . $request->search . '%')
-                        ->where('PID','PO')
-                        ->orderBy('PLINE', 'DESC')
-                        ->first();
+            // Construir la consulta
+            $query = HPO::where('PORD', 'like', '%' . $request->search . '%')
+                        ->where('PID', 'PO')
+                        ->where('PQORD', '>', 0)
+                        ->orderBy('PLINE', 'DESC');
+
+            // Ejecutar la consulta
+            $pos_qty = $query->count();
+            $pos = $query->first();
         }
 
+        // Responder a la solicitud AJAX
         if ($request->ajax()) {
-            return response()->json($POs);
+            return response()->json([
+                'pos' => $pos,
+                'pos_qty' => $pos_qty
+            ]);
         }
 
-        return view('index', ['POs' => $POs]);
+        // Retornar la vista
+        return view('index');
     }
+
 
     
     public function pdf($PORD){

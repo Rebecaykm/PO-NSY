@@ -13,7 +13,7 @@
                 <button id="clearButton" class="btn btn-secondary">Borrar filtro</button>
             </div>
         </div>
-        @include('partials.table_po', ['POs' => $POs])
+        @include('partials.table_po')
     </div>
 </x-app-layout>
 
@@ -28,17 +28,16 @@
             }
             const row = `
                 <tr class="text-gray-700 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <td class="px-4 py-2 text-xs">${po.PORD || ''}</td>
-                    <td class="px-4 py-2 text-xs">${po.PVEND || ''}</td>
-                    <td class="px-4 py-2 text-xs">${po.PLINE || ''}</td>
-                    <td class="px-4 py-2 text-xs">${po.PSHIP || ''}</td>
-                    <td class="px-4 py-2 text-xs">${po.PBUYC || ''}</td>
-                    <td class="px-4 py-2 text-xs">${po.POCUR || ''}</td>
+                    <td class="px-4 py-2 text-xs">${po.pos.PORD || ''}</td>
+                    <td class="px-4 py-2 text-xs">${po.pos.PVEND || ''}</td>
+                    <td class="px-4 py-2 text-xs">${po.pos_qty || ''}</td>
+                    <td class="px-4 py-2 text-xs">${po.pos.PSHIP || ''}</td>
+                    <td class="px-4 py-2 text-xs">${po.pos.PBUYC || ''}</td>
+                    <td class="px-4 py-2 text-xs">${po.pos.POCUR || ''}</td>
                     <td class="px-4 py-2 text-xs description-cell">
-                        <a href="/pdf/${po.PORD}" target="_blank">PDF</a>
+                        <a href="index.php/pdf/${po.pos.PORD}" target="_blank">PDF</a>
                     </td>
                 </tr>`;
-
             $('#purchaseOrderTable').append(row); // Añadir fila a la tabla
         }
 

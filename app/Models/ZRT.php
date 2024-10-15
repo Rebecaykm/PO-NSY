@@ -8,13 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ZRT extends Model
 {
     use HasFactory;
-    // protected $dateFormat = 'Ymd H:i:s.v';
-    // protected $connection = 'odbc-connection-lx834f02';
-    protected $connection = 'odbc-connection-lx834f01';
-    // protected $table = 'LX834F02.AVM';
-    protected $table = 'LX834F01.ZRT';
-    public $timestamps = false; // Desactivar timestamps
-    public $incrementing = false;
+    protected $dateFormat = 'Ymd H:i:s.v';
     protected $fillable = [
         'RTID',
         'RTCVCD',
