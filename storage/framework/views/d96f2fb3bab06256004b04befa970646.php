@@ -2087,18 +2087,33 @@ xmlns="http://www.w3.org/TR/REC-html40">
     </o:shapelayout></xml><![endif]-->
     </head>
     <?php
-        // dd($PORD);
-        // $selectedRQ->id
-        // $RequestRequisitions = App\Models\HPO::where('PORD',$PORD)->first();
-        $PO = App\Models\HPO::where('PORD',$PORD)->orderBy('PLINE','DESC')->first();
-        $lines = App\Models\HPO::where('PORD',$PORD)
-                                ->where('PID','PO')
-                                ->orderBy('PLINE','ASC')
+        // HPO 
+        // 470694, 'PID',    //Estatus 'PORD',   //num po 'PLINE',  //numero de linea 'PPROD',  //commodity 'PODESC', //descripcion 'PUM',    //unidad de medida 'PDDTE',  //Due Date 'PQORD',  //Quantity Ordered 'PECST',  //Unit Cost 'PVEND',  // VENDOR NUM 'PSHIP',  // Ship To 'PONAME', //  Departament ship to 'PBUYC',  //Buyer 'POCUR',  //Currency 
+
+        // Obtener la primera línea HPO según el PORD
+        $PO = App\Models\HPO::where('PORD', $PORD)->orderBy('PLINE', 'DESC')->first();
+
+        // Obtener todas las líneas HPO relacionadas al PORD con PID igual a 'PO'
+        $TotalLines = App\Models\HPO::where('PORD', $PORD)
+                                ->where('PID', 'PO')
+                                ->orderBy('PLINE', 'ASC')
                                 ->get();
-        $Numero_de_lienas = $lines->count();
+
+        // Crear una lista única de los valores de PPROD (productos únicos)
+        $UniqueLines = $TotalLines->unique('PPROD')->values();
+        // dd($UniqueLines);
+
+        // Contar el número de líneas únicas
+        $Numero_de_lineas = $UniqueLines->count();
+
+        // Definir el máximo de líneas por hoja
         $maximo_de_lineas = 12;
-        $numero_de_hojas = ceil($Numero_de_lienas / $maximo_de_lineas);
-        ?>
+
+        // Calcular el número total de hojas
+        $numero_de_hojas = ceil($Numero_de_lineas / $maximo_de_lineas);
+
+    ?>
+
         <?php for($hoja = 0; $hoja < $numero_de_hojas; $hoja++): ?>
             <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
                 <div class=WordSection1>
@@ -2201,7 +2216,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                     <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif;mso-ansi-language:ES'>
                                         
-                                        <?php echo e($lines[0]->POSRCE); ?>
+                                        <?php echo e($UniqueLines[0]->POSRCE); ?>
 
                                     </span>
                                     <span style='font-size:6.0pt;font-family:"Arial",sans-serif'></span>
@@ -2374,12 +2389,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 </p>
                             </td>
                         </tr>
-                        <?php for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lienas); $i++): ?>
+                        <?php for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++): ?>
                             <tr style='mso-yfti-irow:1;height:7.1pt'>
                                 <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e($lines[$i]->PLINE); ?>
+                                            
+                                            <?php echo e($i+1); ?>
 
                                         </span>
                                     </p>
@@ -2387,7 +2403,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <td width="13%" valign=top style='width:13.34%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e($lines[$i]->PPROD); ?>
+                                            <?php echo e($UniqueLines[$i]->PPROD); ?>
 
                                         </span>
                                     </p>
@@ -2395,7 +2411,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <td width="28%" valign=top style='width:28.58%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e($lines[$i]->PODESC); ?>
+                                            <?php echo e($UniqueLines[$i]->PODESC); ?>
 
                                         </span>
                                     </p>
@@ -2403,23 +2419,40 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <td width="3%" valign=top style='width:3.94%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e($lines[$i]->PUM); ?>
+                                            <?php echo e($UniqueLines[$i]->PUM); ?>
 
                                         </span>
                                     </p>
                                 </td>
+                                <?php
+                                    // Para cada producto único en UniqueLines
+                                    $PDDTE = $TotalLines->filter(function ($line) use ($UniqueLines, $i) {
+                                        // Filtrar donde el campo PPROD coincida con el producto actual en UniqueLines
+                                        return $line->PPROD == $UniqueLines[$i]->PPROD;
+                                    })->max('PDDTE'); // Obtener la fecha más grande
+
+                                    // Convertir la fecha a formato d/m/Y
+                                    $formattedDate = \Carbon\Carbon::createFromFormat('Ymd', $PDDTE)->format('d/m/Y');
+                                ?>
                                 <td width="6%" valign=top style='width:6.9%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e(\Carbon\Carbon::createFromFormat('Ymd', $lines[$i]->PDDTE)->format('d/m/Y')); ?>
+                                            <?php echo e($formattedDate); ?>
 
                                         </span>
                                     </p>
                                 </td>
+                                <?php
+                                    // Para cada producto único en UniqueLines
+                                    $PQORD = $TotalLines->filter(function ($line) use ($UniqueLines, $i) {
+                                        // Filtrar donde el campo PPROD coincida con el producto actual en UniqueLines
+                                        return $line->PPROD == $UniqueLines[$i]->PPROD;
+                                    })->sum('PQORD'); // Sumar el campo PQORD de las líneas filtradas
+                                ?>
                                 <td width="7%" valign=top style='width:7.88%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e($lines[$i]->PQORD); ?>
+                                            <?php echo e(number_format($PQORD)); ?>
 
                                         </span></span>
                                     </p>
@@ -2427,7 +2460,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <td width="10%" valign=top style='width:10.68%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e(number_format($lines[$i]->PECST,2)); ?>
+                                            <?php echo e(number_format($UniqueLines[$i]->PECST,2)); ?>
 
                                         </span>
                                     </p>
@@ -2435,7 +2468,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 <td width="10%" valign=top style='width:10.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                     <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
                                         <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                                            <?php echo e(number_format($lines[$i]->PQORD * $lines[$i]->PECST,2)); ?>
+                                            <?php echo e(number_format($UniqueLines[$i]->PQORD * $UniqueLines[$i]->PECST,2)); ?>
 
                                         </span>
                                     </p>
@@ -2448,7 +2481,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                             </tr>
                         <?php endfor; ?>
                         <?php if($hoja == $numero_de_hojas - 1): ?>
-                            <?php for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lienas % $maximo_de_lineas)) % $maximo_de_lineas; $i++): ?>
+                            <?php for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas)) % $maximo_de_lineas; $i++): ?>
                                 <tr style='mso-yfti-irow:1;height:7.1pt'>
                                     <td width="3%" valign=top style='width:3.36%;border:solid windowtext 1.0pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt; padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
                                         <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
