@@ -655,19 +655,9 @@
                                                             <td class="px-4 py-2 text-xs">
                                                                 $ {{ round($RQL->UnitCost,4) }} {{ $RQL->currency->name }}
                                                             </td>
-                                                            @if ($RQL->Currency_id == 1)
-                                                                <td class="px-4 py-2 text-xs">
-                                                                    $ {{ round($RQL->TotalCostMXN,4) }} {{ $RQL->currency->name }}
-                                                                </td>
-                                                            @elseif ($RQL->Currency_id == 2)
-                                                                <td class="px-4 py-2 text-xs">
-                                                                    $ {{ round($RQL->TotalCostUSD,4) }} {{ $RQL->currency->name }}
-                                                                </td>
-                                                            @elseif ($RQL->Currency_id == 3)
-                                                                <td class="px-4 py-2 text-xs">
-                                                                    $ {{ round($RQL->TotalCostJPY,4) }} {{ $RQL->currency->name }}
-                                                                </td>
-                                                            @endif
+                                                            <td class="px-4 py-2 text-xs">
+                                                                $ {{ round($RQL->quantity * $RQL->UnitCost,4) }} {{ $RQL->currency->name }}
+                                                            </td>
                                                             <td class="px-4 py-2 text-xs">
                                                                 <span class="px-4 py-2 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
                                                                     {{ $RQL->statusList->name}}
@@ -720,7 +710,7 @@
                                                             <th class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ">
                                                                 <span class="mr-1">Comentario</span>
                                                             </th>
-                                                        </atr>
+                                                        </tr>
                                                     </thead>
                                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                                         @foreach ($quotes as $quote)
@@ -773,7 +763,7 @@
                                                             <th wire:click="Detalles('description')" class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ">
                                                                 <span class="mr-1">Ir</span>
                                                             </th>
-                                                        </atr>
+                                                        </tr>
                                                     </thead>
                                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                                         @foreach ($files as $file)
