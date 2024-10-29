@@ -2078,8 +2078,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
         mso-font-kerning:1.0pt;
         mso-ligatures:standardcontextual;
         mso-fareast-language:EN-US;}
-        .footer { position: fixed; bottom: 0; left: 0; right: 0; height: 50px; }
-        .page-number { text-align: center; }
     </style>
     <![endif]--><!--[if gte mso 9]><xml>
     <o:shapedefaults v:ext="edit" spidmax="1026"/>
@@ -2097,78 +2095,48 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 ->orderBy('PLINE', 'ASC')
                                 ->get();
         // Crear una lista única de los valores de PPROD (productos únicos)
-        //$UniqueLines = $TotalLines->unique('PODESC')->values();
-        $UniqueLines = $TotalLines->unique('PPROD')->values();
+        //$UniqueLines = $TotalLines->unique('PPROD')->values();
+        $UniqueLines = $TotalLines->unique('PODESC')->values();
+        // dd($UniqueLines);
         // Contar el número de líneas únicas
         $Numero_de_lineas = $UniqueLines->count();
         // Definir el máximo de líneas por hoja
-        $maximo_de_lineas = 26;
-        $lineas_ultima_hoja = 12;
+        $maximo_de_lineas = 12;
         // Calcular el número total de hojas
         $numero_de_hojas = ceil($Numero_de_lineas / $maximo_de_lineas);
-        
-        
     ?>
-
     <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
-        <?php
-            $mayor_a_lineas_ultima_hoja = ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas));
-            $i = $mayor_a_lineas_ultima_hoja < $lineas_ultima_hoja ? 1 : 0;
-            $TotalHojas = $numero_de_hojas + $i;
-        ?>
         <?php for($hoja = 0; $hoja < $numero_de_hojas; $hoja++): ?>
             <div class=WordSection1>
                 <?php echo $__env->make('partials.encabezado', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>
-                    <span style='font-size:4.0pt;font-family:"Arial",sans-serif'>
-                    </span>
-                </p>
+                
                 <table class=Tablaconcuadrcula border=1 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt; mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
-                    
                     <?php echo $__env->make('partials.titulo_tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++): ?>
                         <?php echo $__env->make('partials.lineas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php endfor; ?>
                     <?php if($hoja == $numero_de_hojas - 1): ?>
-                        <?php if(($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas)) >= $lineas_ultima_hoja): ?>
-                            <?php for($i = 0; $i < ($lineas_ultima_hoja - ($Numero_de_lineas % $lineas_ultima_hoja)) % $lineas_ultima_hoja; $i++): ?>
-                                <?php echo $__env->make('partials.voidLines', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            <?php endfor; ?>
-                            </table>
-                            <?php echo $__env->make('partials.resultados', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            <p class=MsoNormal>
-                                <span style='font-size:4.0pt;line-height:105%;font-family:"Arial",sans-serif'></span>
-                            </p>
-                            <?php echo $__env->make('partials.firmas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                        <?php else: ?>
-                            <?php for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas)) % $maximo_de_lineas; $i++): ?>
-                                <?php echo $__env->make('partials.voidLines', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                            <?php endfor; ?>
-                            </table> 
-                        <?php endif; ?>
-                    <?php else: ?>
-                        </table> 
+                        <?php for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas)) % $maximo_de_lineas; $i++): ?>
+                            <?php echo $__env->make('partials.voidLines', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        <?php endfor; ?>
                     <?php endif; ?>
-                    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <?php endfor; ?>
-                <?php if($i): ?>
-                    <?php echo $__env->make('partials.encabezado', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <p class=MsoNormal>
-                        <span style='font-size:6.0pt;line-height:105%;font-family:"Arial",sans-serif'>
-                        </span>
-                    </p>
-                    <?php echo $__env->make('partials.resultados', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <p class=MsoNormal>
-                        <span style='font-size:4.0pt;line-height:105%;font-family:"Arial",sans-serif'>
-                        </span>
-                    </p>
-                    <?php echo $__env->make('partials.firmas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <?php for($i = 0; $i < 12; $i++): ?>
-                        <br>
-                    <?php endfor; ?>
-                    <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                <?php endif; ?>
-    
+                </table>
+                <?php
+                    $subtotal = 0;
+                    for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++){
+                        $subtotal += $UniqueLines[$i]->PQORD * $UniqueLines[$i]->PECST;
+                    }
+                    $total = ($hoja == $numero_de_hojas - 1) ? ($SUBTOTAL+$IVA+$IRF+$OT) : 0;
+                        
+                ?>
+                <?php echo $__env->make('partials.resultados', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <p class=MsoNormal>
+                    <span style='font-size:6.0pt;line-height:105%;font-family:"Arial",sans-serif'>
+                    </span>
+                </p>
+                <?php echo $__env->make('partials.firmas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            </div>
+        <?php endfor; ?>
     </body>
-</html>
-<?php /**PATH C:\xampp\htdocs\PO-MSY\resources\views/pdf.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\PO-MSY\resources\views/pdf.blade.php ENDPATH**/ ?>
