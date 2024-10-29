@@ -2114,6 +2114,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
         <?php
             $mayor_a_lineas_ultima_hoja = ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas));
             $i = $mayor_a_lineas_ultima_hoja < $lineas_ultima_hoja ? 1 : 0;
+            $TotalHojas = $numero_de_hojas + $i;
         ?>
         <?php for($hoja = 0; $hoja < $numero_de_hojas; $hoja++): ?>
             <div class=WordSection1>
