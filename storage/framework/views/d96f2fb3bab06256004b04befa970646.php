@@ -2134,7 +2134,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     <span style='font-size:6.0pt;line-height:105%;font-family:"Arial",sans-serif'>
                     </span>
                 </p>
-                <?php echo $__env->make('partials.firmas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php if($hoja == $numero_de_hojas - 1): ?>
+                    <?php echo $__env->make('partials.firmas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php else: ?>
+                    <?php for($i = 0; $i < 10; $i++): ?>
+                        <br>
+                    <?php endfor; ?>
+                <?php endif; ?>
                 <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
         <?php endfor; ?>

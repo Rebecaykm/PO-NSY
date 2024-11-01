@@ -2137,7 +2137,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     <span style='font-size:6.0pt;line-height:105%;font-family:"Arial",sans-serif'>
                     </span>
                 </p>
-                @include('partials.firmas')
+                @if($hoja == $numero_de_hojas - 1)
+                    @include('partials.firmas')
+                @else
+                    @for ($i = 0; $i < 10; $i++)
+                        <br>
+                    @endfor
+                @endif
                 @include('partials.footer')
             </div>
         @endfor
