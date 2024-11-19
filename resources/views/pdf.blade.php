@@ -2095,8 +2095,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 ->orderBy('PLINE', 'ASC')
                                 ->get();
         // Crear una lista única de los valores de PPROD (productos únicos)
-        //$UniqueLines = $TotalLines->unique('PPROD')->values();
-        $UniqueLines = $TotalLines->unique('PODESC')->values();
+        $UniqueLines = $TotalLines->unique('PPROD')->values();
+        //$UniqueLines = $TotalLines->unique('PODESC')->values();
         // dd($UniqueLines);
         // Contar el número de líneas únicas
         $Numero_de_lineas = $UniqueLines->count();
@@ -2104,9 +2104,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
         $maximo_de_lineas = 12;
         // Calcular el número total de hojas
         $numero_de_hojas = ceil($Numero_de_lineas / $maximo_de_lineas);
+        $total_final =0;
     @endphp
     <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
         @for($hoja = 0; $hoja < $numero_de_hojas; $hoja++)
+            @php 
+            $total_hoja=0.0
+            @endphp
             <div class=WordSection1>
                 @include('partials.encabezado')
                 {{-- <p class=MsoNormal>
@@ -2117,6 +2121,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     @include('partials.titulo_tabla')
                     @for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++)
                         @include('partials.lineas')
+                        @php
+                        // Para cada producto único en UniqueLines
+                        $PQORD = $TotalLines->filter(function ($line) use ($UniqueLines, $i) {
+                            // Filtrar donde el campo PPROD coincida con el producto actual en UniqueLines
+                            return $line->PPROD == $UniqueLines[$i]->PPROD;
+                        })->sum('PQORD'); // Sumar el campo PQORD de las líneas filtradas
+                        $total_hoja += ($PQORD * $UniqueLines[$i]->PECST);
+                        @endphp
                     @endfor
                     @if($hoja == $numero_de_hojas - 1)
                         @for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas)) % $maximo_de_lineas; $i++)
@@ -2129,7 +2141,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++){
                         $subtotal += $UniqueLines[$i]->PQORD * $UniqueLines[$i]->PECST;
                     }
-                    $total = ($hoja == $numero_de_hojas - 1) ? ($SUBTOTAL+$IVA+$IRF+$OT) : 0;
+                    
+                    $total_final += $total_hoja;
                         
                 @endphp
                 @include('partials.resultados')
@@ -2145,6 +2158,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     @endfor
                 @endif
                 @include('partials.footer')
+
             </div>
         @endfor
     </body>

@@ -2095,8 +2095,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                                 ->orderBy('PLINE', 'ASC')
                                 ->get();
         // Crear una lista única de los valores de PPROD (productos únicos)
-        //$UniqueLines = $TotalLines->unique('PPROD')->values();
-        $UniqueLines = $TotalLines->unique('PODESC')->values();
+        $UniqueLines = $TotalLines->unique('PPROD')->values();
+        //$UniqueLines = $TotalLines->unique('PODESC')->values();
         // dd($UniqueLines);
         // Contar el número de líneas únicas
         $Numero_de_lineas = $UniqueLines->count();
@@ -2104,9 +2104,13 @@ xmlns="http://www.w3.org/TR/REC-html40">
         $maximo_de_lineas = 12;
         // Calcular el número total de hojas
         $numero_de_hojas = ceil($Numero_de_lineas / $maximo_de_lineas);
+        $total_final =0;
     ?>
     <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
         <?php for($hoja = 0; $hoja < $numero_de_hojas; $hoja++): ?>
+            <?php 
+            $total_hoja=0.0
+            ?>
             <div class=WordSection1>
                 <?php echo $__env->make('partials.encabezado', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 
@@ -2114,6 +2118,14 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     <?php echo $__env->make('partials.titulo_tabla', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <?php for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++): ?>
                         <?php echo $__env->make('partials.lineas', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        <?php
+                        // Para cada producto único en UniqueLines
+                        $PQORD = $TotalLines->filter(function ($line) use ($UniqueLines, $i) {
+                            // Filtrar donde el campo PPROD coincida con el producto actual en UniqueLines
+                            return $line->PPROD == $UniqueLines[$i]->PPROD;
+                        })->sum('PQORD'); // Sumar el campo PQORD de las líneas filtradas
+                        $total_hoja += ($PQORD * $UniqueLines[$i]->PECST);
+                        ?>
                     <?php endfor; ?>
                     <?php if($hoja == $numero_de_hojas - 1): ?>
                         <?php for($i = 0; $i < ($maximo_de_lineas - ($Numero_de_lineas % $maximo_de_lineas)) % $maximo_de_lineas; $i++): ?>
@@ -2126,7 +2138,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     for($i = $hoja * $maximo_de_lineas; $i < min(($hoja + 1) * $maximo_de_lineas, $Numero_de_lineas); $i++){
                         $subtotal += $UniqueLines[$i]->PQORD * $UniqueLines[$i]->PECST;
                     }
-                    $total = ($hoja == $numero_de_hojas - 1) ? ($SUBTOTAL+$IVA+$IRF+$OT) : 0;
+                    
+                    $total_final += $total_hoja;
                         
                 ?>
                 <?php echo $__env->make('partials.resultados', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
@@ -2142,6 +2155,7 @@ xmlns="http://www.w3.org/TR/REC-html40">
                     <?php endfor; ?>
                 <?php endif; ?>
                 <?php echo $__env->make('partials.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
             </div>
         <?php endfor; ?>
     </body>

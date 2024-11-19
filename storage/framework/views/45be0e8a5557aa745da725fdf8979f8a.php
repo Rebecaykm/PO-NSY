@@ -56,6 +56,7 @@
             // Filtrar donde el campo PPROD coincida con el producto actual en UniqueLines
             return $line->PPROD == $UniqueLines[$i]->PPROD;
         })->sum('PQORD'); // Sumar el campo PQORD de las líneas filtradas
+        
     ?>
     <td width="7%" valign=top style='width:7.88%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
         <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
@@ -76,7 +77,7 @@
     <td width="10%" valign=top style='width:10.6%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:7.1pt'>
         <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right;line-height:normal'>
             <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
-                <?php echo e(number_format($UniqueLines[$i]->PQORD * $UniqueLines[$i]->PECST,2)); ?>
+                <?php echo e(number_format($PQORD * $UniqueLines[$i]->PECST,2)); ?>
 
             </span>
         </p>

@@ -15,7 +15,7 @@
         <td width="10%" valign="top" style="width:10.6%; border:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt;">
             <p class="MsoNormal" align="right" style="margin-bottom:0cm; text-align:right; line-height:normal;">
                 <span lang="ES" style="font-size:6.0pt; font-family:'Arial', sans-serif; mso-ansi-language:ES;">
-                    <?php echo e(number_format($subtotal, 2)); ?>
+                    <?php echo e(number_format($total_hoja, 2)); ?>
 
                 </span>
             </p>
@@ -39,7 +39,8 @@
         <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                 <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                    0.00
+                    <?php echo e(number_format($IVA, 2)); ?>
+
                 </span>
                 <span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                 </span>
@@ -93,7 +94,7 @@
         <td width="10%" valign=top style='width:10.6%;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; mso-border-top-alt:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
             <p class=MsoNormal align=right style='margin-bottom:0cm;text-align:right; line-height:normal'>
                 <span lang=ES style='font-size:6.0pt;font-family:"Arial",sans-serif; mso-ansi-language:ES'>
-                    <?php echo e(number_format($total, 2)); ?>
+                    <?php echo e(number_format($total_final, 2)); ?>
 
                 </span><span style='font-size:6.0pt;font-family:"Arial",sans-serif'>
                 </span>
